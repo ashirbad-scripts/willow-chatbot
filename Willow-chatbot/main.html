@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #E9D5FF, #7E22CE);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            min-height: 100vh;
+            padding: 12px;
+        }
+        .container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+        p {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 24px;
+        }
+        .chat-button {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7E22CE;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .chat-button:hover {
+            transform: scale(1.05);
+        }
+        .chat-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: white;
+            border-radius: 50%;
+            animation: ping 1.5s infinite;
+            opacity: 0.2;
+        }
+        /* .chat-popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .chat-box {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            animation: slideUp 0.3s ease-out;
+        }
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .chat-body {
+            background: #f9fafb;
+            padding: 12px;
+            border-radius: 8px;
+            height: 200px;
+        } */
+        .hidden {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes ping {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My AI Assistant</h1>
+        <p>I'm here to help! Try out my chatbot and let's have a conversation.</p>
+        <div class="chat-button" onclick="toggleChat()">AI</div>
+    </div>
+
+    <div id="chat-popup" class="chat-popup hidden">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>Chat with AI</h2>
+                <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body">
+                <p>Chat interface coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatPopup = document.getElementById('chat-popup');
+            chatPopup.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google-fonts-->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Connections -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="container">
+        <h1>Hey Traveller, Try me</h1>
+        <p>WilloW - The Bot at your service, fear not ask me anything you wish to know</p>
+        <div class="chat-button" onclick="toggleChat()">🤖</div>
+        <p>(: Click Me :)</p>
+    </div>
+    
+    <!-- Chat-window -->
+    <section class="chat-window">
+        <button class="close">x close</button>
+        <div class="chat">
+            <div class="model">
+                <p>What do you wish to know - for I am the omniscient</p>
+            </div> 
+        </div>
+
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="send">
+            </button>
+
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyrights reserved @Ashirbad Routray</p>
+    </div>
+
+    <!-- Link to javascript and API -->
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    
+    <script type="module" src="main.js"></script>
+    
+</body>
+</html>
